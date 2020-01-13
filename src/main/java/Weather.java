@@ -52,7 +52,7 @@ public class Weather {
             archetype.setHealth(2);
             archetype.setEnergy(2);
         } else {
-            archetype.setName("Админ");
+            archetype.setName("CуперАдмин");
             archetype.setStrength(999);
             archetype.setHealth(999);
             archetype.setEnergy(999);
