@@ -7,7 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class Weather {
+public class Stats {
 
 //    public static String getWeather(String message, Model model) throws IOException {
 //        URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + message + "&units=metric&appid=6fff53a641b9b9a799cfd6b079f5cd4e");
@@ -39,7 +39,7 @@ public class Weather {
 //                "http://openweathermap.org/img/w/" + model.getIcon() + ".png";
 //    }
 
-    public static String getWeather(String name) {
+    public static String getArchetypeStats(String name) {
         Archetype archetype = new Archetype();
         if (name.equals("Слива")) {
             archetype.setName("Слива");

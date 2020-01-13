@@ -10,8 +10,8 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Bot extends TelegramLongPollingBot {
@@ -36,13 +36,24 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.setReplyToMessageId(message.getMessageId());
 
         sendMessage.setText(text);
-        try {
 
-            setButtons(sendMessage);
-            execute(sendMessage);
+        if (message.getText().equals("/class")) {
+            try {
 
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
+                setButtons(sendMessage);
+                execute(sendMessage);
+
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+
+        } else {
+            try {
+                execute(sendMessage);
+
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -58,24 +69,24 @@ public class Bot extends TelegramLongPollingBot {
                 case "/setting":
                     sendMsg(message, "Что будем настраивать?");
                     break;
-                case"/class":
+                case "/class":
                     sendMsg(message, "Выбери свой класс");
                     break;
                 default:
-                    if (message.getText().equals("Слива")){
-                        sendMsg(message,Weather.getWeather("Слива"));
+                    if (message.getText().equals("Слива")) {
+                        sendMsg(message, Stats.getArchetypeStats("Слива"));
                         break;
                     }
-                    if (message.getText().equals("Душила")){
-                        sendMsg(message,Weather.getWeather("Душила"));
+                    if (message.getText().equals("Душила")) {
+                        sendMsg(message, Stats.getArchetypeStats("Душила"));
                         break;
                     }
 
-                    try {
-                        sendMsg(message, "Нехрен мне просто так писать");
-                    } catch (Exception e) {
-                        sendMsg(message, "Ты умудрился найти ошибку! Сообщи Роме");
-                    }
+//                    try {
+//                        sendMsg(message, "Нехрен мне просто так писать");
+//                    } catch (Exception e) {
+//                        sendMsg(message, "Ты умудрился найти ошибку! Сообщи Роме");
+//                    }
 
             }
         }
@@ -88,13 +99,13 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
         replyKeyboardMarkup.setSelective(true);
         replyKeyboardMarkup.setResizeKeyboard(true);
-        replyKeyboardMarkup.setOneTimeKeyboard(false);
+        replyKeyboardMarkup.setOneTimeKeyboard(true);
 
         List<KeyboardRow> keyboardRowList = new ArrayList<>();
         KeyboardRow keyboardFirstRow = new KeyboardRow();
 
-        keyboardFirstRow.add(new KeyboardButton("Слива"));
-        keyboardFirstRow.add(new KeyboardButton("Душила"));
+        keyboardFirstRow.add(new KeyboardButton(ArchetypeNames.DUWILA.getName()));
+        keyboardFirstRow.add(new KeyboardButton(ArchetypeNames.SLIVA.getName()));
 
         keyboardRowList.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
