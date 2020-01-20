@@ -1,6 +1,7 @@
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
+import org.telegram.telegrambots.api.objects.Chat;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
@@ -11,7 +12,6 @@ import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Bot extends TelegramLongPollingBot {
@@ -59,9 +59,26 @@ public class Bot extends TelegramLongPollingBot {
 
 
     public void onUpdateReceived(Update update) {
-        Model model = new Model();
+
         Message message = update.getMessage();
-        if (message != null && message.hasText()) {
+        Chat chat = message.getChat();
+
+
+        if (chat.getId() == 231139905) {
+            if (message != null && message.hasText()) {
+                switch (message.getText()) {
+                    case "/help":
+                        sendMsg(message, "/help\n/fight");
+                        break;
+                    case "/fight":
+                        sendMsg(message, "Start battle");
+                        sendMsg(message, BattleService.startBattle(Stats.getArchetype("Слива"), Stats.getArchetype("Душила")));
+
+                        break;
+                    default:
+                }
+            }
+        } else if (message != null && message.hasText()) {
             switch (message.getText()) {
                 case "/help":
                     sendMsg(message, "/help\n/setting\n/class");
@@ -72,6 +89,15 @@ public class Bot extends TelegramLongPollingBot {
                 case "/class":
                     sendMsg(message, "Выбери свой класс");
                     break;
+                case "/sliwa":
+                    sendMsg(message, "удар сливой");
+                    sendMsg(message, getSliwa().toString());
+                    break;
+                case "/fight":
+                    sendMsg(message, "Start battle");
+                    sendMsg(message, BattleService.startBattle(Stats.getArchetype("Слива"), Stats.getArchetype("Душила")));
+
+                    break;
                 default:
                     if (message.getText().equals("Слива")) {
                         sendMsg(message, Stats.getArchetypeStats("Слива"));
@@ -81,16 +107,16 @@ public class Bot extends TelegramLongPollingBot {
                         sendMsg(message, Stats.getArchetypeStats("Душила"));
                         break;
                     }
-
-//                    try {
-//                        sendMsg(message, "Нехрен мне просто так писать");
-//                    } catch (Exception e) {
-//                        sendMsg(message, "Ты умудрился найти ошибку! Сообщи Роме");
-//                    }
-
             }
         }
+    }
 
+    public Card getSliwa() {
+
+        Card card = new Card("Бросок сливы", "Закидывает сливу в чат противника", "Basic");
+        card.setAction(ACTION.getByActName(card.getTitle()));
+
+        return card;
     }
 
 

@@ -43,13 +43,13 @@ public class Stats {
         Archetype archetype = new Archetype();
         if (name.equals("Слива")) {
             archetype.setName("Слива");
-            archetype.setStrength(3);
-            archetype.setHealth(3);
+            archetype.setStrength(2);
+            archetype.setHealth(20);
             archetype.setEnergy(3);
         } else if (name.equals("Душила")) {
             archetype.setName("Душила");
-            archetype.setStrength(2);
-            archetype.setHealth(2);
+            archetype.setStrength(3);
+            archetype.setHealth(15);
             archetype.setEnergy(2);
         } else {
             archetype.setName("CуперАдмин");
@@ -59,5 +59,27 @@ public class Stats {
         }
 
         return archetype.toString();
+    }
+
+    public static Archetype getArchetype(String name) {
+        Archetype archetype = new Archetype();
+        if (name.equals("Слива")) {
+            archetype.setName("Слива");
+            archetype.setStrength(2);
+            archetype.setHealth(20);
+            archetype.setEnergy(3);
+        } else if (name.equals("Душила")) {
+            archetype.setName("Душила");
+            archetype.setStrength(3);
+            archetype.setHealth(15);
+            archetype.setEnergy(2);
+        } else {
+            archetype.setName("CуперАдмин");
+            archetype.setStrength(999);
+            archetype.setHealth(999);
+            archetype.setEnergy(999);
+        }
+
+        return archetype;
     }
 }
