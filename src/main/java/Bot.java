@@ -10,11 +10,17 @@ import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;
+import repository.BotUser;
+import service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Bot extends TelegramLongPollingBot {
+
+    UserService service;
+
+
     public static void main(String[] args) {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
@@ -59,6 +65,8 @@ public class Bot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
 
+        String name = "dokuton";
+
         Message message = update.getMessage();
         Chat chat = message.getChat();
 
@@ -72,8 +80,9 @@ public class Bot extends TelegramLongPollingBot {
                     case "/fight":
                         sendMsg(message, "Start battle");
                         sendMsg(message, BattleService.startBattle(Stats.getArchetype("Слива"), Stats.getArchetype("Душила")));
-
                         break;
+                    case  "/duel":
+                        sendMsg(message, "Prepare to battle @NikroOm");
                     default:
                 }
             }
@@ -95,8 +104,11 @@ public class Bot extends TelegramLongPollingBot {
                 case "/fight":
                     sendMsg(message, "Start battle");
                     sendMsg(message, BattleService.startBattle(Stats.getArchetype("Слива"), Stats.getArchetype("Душила")));
-
                     break;
+                case  "/duel":
+                    BotUser user = service.getRandomUser();
+                    String alias = user.getAlias();
+                    sendMsg(message, "Prepare to battle @" + alias);
                 default:
                     if (message.getText().equals("Слива")) {
                         sendMsg(message, Stats.getArchetypeStats("Слива"));
