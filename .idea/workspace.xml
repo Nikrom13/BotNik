@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da898dd4-47f0-4dfe-8b5f-07de7c4ffaee" name="Default" comment="qwe">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_42_2_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgresql-42.2.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/BotUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBotApi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBotApi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BattleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BattleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BattleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BattleService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Bot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Bot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +53,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Roman.Krasin\IdeaProjects\BotNik" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Roman.Krasin\IdeaProjects\BotNik" />
@@ -139,7 +142,8 @@
       <workItem from="1578909112345" duration="2629000" />
       <workItem from="1578911927369" duration="295000" />
       <workItem from="1578915182452" duration="1255000" />
-      <workItem from="1582023392798" duration="8957000" />
+      <workItem from="1582023392798" duration="9768000" />
+      <workItem from="1582105419894" duration="4394000" />
     </task>
     <task id="LOCAL-00001" summary="qwe">
       <created>1579528335415</created>
@@ -195,41 +199,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578911513635" />
-    <state width="1921" height="356" key="GridCell.Tab.0.bottom" timestamp="1582032536192">
+    <state width="1921" height="217" key="GridCell.Tab.0.bottom" timestamp="1582113345906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582032536192" />
+    <state width="1921" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582113345906" />
     <state width="1877" height="317" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579528406729" />
-    <state width="1921" height="356" key="GridCell.Tab.0.center" timestamp="1582032536192">
+    <state width="1921" height="217" key="GridCell.Tab.0.center" timestamp="1582113345906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582032536192" />
+    <state width="1921" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582113345906" />
     <state width="1877" height="317" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579528406729" />
-    <state width="1921" height="356" key="GridCell.Tab.0.left" timestamp="1582032536192">
+    <state width="1921" height="217" key="GridCell.Tab.0.left" timestamp="1582113345906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582032536192" />
+    <state width="1921" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582113345906" />
     <state width="1877" height="317" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579528406729" />
-    <state width="1921" height="356" key="GridCell.Tab.0.right" timestamp="1582032536192">
+    <state width="1921" height="217" key="GridCell.Tab.0.right" timestamp="1582113345906">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="356" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582032536192" />
+    <state width="1921" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582113345906" />
     <state width="1877" height="317" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579528406729" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1578916438280">
+    <state width="1921" height="356" key="GridCell.Tab.1.bottom" timestamp="1582037511384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582037511384" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578916438280" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1578916438280">
+    <state width="1921" height="356" key="GridCell.Tab.1.center" timestamp="1582037511384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582037511384" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578916438280" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1578916438280">
+    <state width="1921" height="356" key="GridCell.Tab.1.left" timestamp="1582037511384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582037511384" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578916438280" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1578916438280">
+    <state width="1921" height="356" key="GridCell.Tab.1.right" timestamp="1582037511384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1921" height="356" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582037511384" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578916438280" />
     <state x="490" y="176" key="Maven.ArtifactSearchDialog" timestamp="1582030212264">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -244,16 +252,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="242" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1579528384573" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/service/UserService.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -52,6 +52,13 @@ public class Bot extends TelegramLongPollingBot {
                 e.printStackTrace();
             }
 
+        } else if (message.getText().equals("/duel")) {
+            try {
+                execute(sendMessage);
+
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
         } else {
             try {
                 execute(sendMessage);
@@ -60,6 +67,7 @@ public class Bot extends TelegramLongPollingBot {
                 e.printStackTrace();
             }
         }
+
     }
 
 
@@ -81,7 +89,7 @@ public class Bot extends TelegramLongPollingBot {
                         sendMsg(message, "Start battle");
                         sendMsg(message, BattleService.startBattle(Stats.getArchetype("Слива"), Stats.getArchetype("Душила")));
                         break;
-                    case  "/duel":
+                    case "/duel":
                         sendMsg(message, "Prepare to battle @NikroOm");
                     default:
                 }
@@ -105,10 +113,9 @@ public class Bot extends TelegramLongPollingBot {
                     sendMsg(message, "Start battle");
                     sendMsg(message, BattleService.startBattle(Stats.getArchetype("Слива"), Stats.getArchetype("Душила")));
                     break;
-                case  "/duel":
-                    BotUser user = service.getRandomUser();
-                    String alias = user.getAlias();
-                    sendMsg(message, "Prepare to battle @" + alias);
+                case "/duel":
+
+                    sendMsg(message, "Prepare to battle @" + BattleService.getRandomUser());
                 default:
                     if (message.getText().equals("Слива")) {
                         sendMsg(message, Stats.getArchetypeStats("Слива"));

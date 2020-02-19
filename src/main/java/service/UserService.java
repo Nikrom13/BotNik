@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class UserService {
 
-    public BotUser getRandomUser() {
+    public String getRandomUser() {
         BotUser botUser = new BotUser();
 
         int random = (int) ( Math.random() * 3 );
@@ -55,7 +55,7 @@ public class UserService {
             } finally {
                 if (conn != null) conn.close();
             }
-            return botUser;
+            return botUser.getAlias();
         } catch (Exception e) {
             e.printStackTrace();
         }
